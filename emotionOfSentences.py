@@ -1,7 +1,5 @@
 '''
-Created on Dec 29, 2016
-
-@author: hassan
+@author: shreyas
 '''
 from keras.models import model_from_json
 import numpy
