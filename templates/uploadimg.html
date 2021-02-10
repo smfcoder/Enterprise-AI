@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Enterprise AI</title>
+        <link rel="icon" href="../static/treeicon.png" type="image/icon type">
+        <link href="../static/css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body class="sb-nav-fixed">
+
+
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="/home">Enterprise AI</a><button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ml-auto ml-md-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+<!--                        <a class="dropdown-item" href="#">Settings</a><a class="dropdown-item" href="#">Activity Log</a>-->
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                          <div class="sb-sidenav-menu-heading">Login as:</div>
+                          <a class="nav-link"><div class="sb-nav-link-icon"></div>{{current_user.email}}</a>
+
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a id="afload1" class="nav-link" href="/home"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Dashboard</a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                                <a id="afload2" class="nav-link" href="/upload"><div class="sb-nav-link-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>Upload</a>
+                                <a id="afload3" class="nav-link" href="/myuploads"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>My Uploads</a>
+                                <a class="nav-link" href="/video_upload"><div class="sb-nav-link-icon"><i class="fa fa-upload" aria-hidden="true"></i></div>Video Upload</a>
+                                <a class="nav-link" href="/video_myuploads"><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>Video My Uploads</a>
+                    </div>
+                   <!--  <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div> -->
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <!-- <h1 class="mt-4">Dashboard</h1> -->
+                        <ol class="breadcrumb mb-4" style="margin-top: 15px;">
+                            <li class="breadcrumb-item active">Upload</li>
+                        </ol>
+                        <form action="/uploader" method=post enctype=multipart/form-data>
+                            <input type="text" name="id" value="{{id}}" hidden>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-2 col-form-label">Upload Image : </label>
+                                <div class="col-sm-10">
+                                    <input id="afload4" type="file" name="file" required>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-top: 10px;margin-bottom: 10px;">
+                                <div class="card-header">Rules</div>
+                                <div class="card-body">
+                                    <ol>
+                                        <li>Upload .txt file for analyzing the textual emotions any text file of chat or mail or message</li>
+                                        <li>Make sure the language used in the text file is English</li>
+                                        <li>If uploading the audio file make sure you can upload a .wav audio file.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                            <center>
+                                <button id="afload5" type="submit" onclick="showDivAttid()" class="btn btn-primary">Submit</button>
+                                
+                            </center>
+                            
+                            <!-- <div class="progress" style="width: 50%; margin: 50px;">
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                    <span class="progress-bar-label">0%</span>
+                                </div>
+                            </div> -->
+                        </form>
+                        
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <!-- <div class="text-muted">Copyright &copy; All rights reserved</div> -->
+                          <!--   <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div> -->
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <div id="loading" class="container1" >
+                <div class="row d-flex align-items-center justify-content-center">
+                <div  class="card">
+                    <div class="card-body">
+                        <center>
+                        <br>
+                        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>  
+                        <br><br>
+                        <h4>Please wait! Your file is being processed...</h4>
+                        </center>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+    
+            
+<script>
+    document.getElementById('loading').style.display = 'none';
+
+    function showDivAttid(){
+        document.getElementById("loading").style.display = 'block';
+        document.getElementById("layoutSidenav_content").style.opacity = '0.5';
+        // document.getElementById("afload").disabled = true;
+        
+        document.getElementById("afload1").style.pointerEvents="none";
+        document.getElementById("afload1").style.cursor="default";
+
+        document.getElementById("afload2").style.pointerEvents="none";
+        document.getElementById("afload2").style.cursor="default";
+
+        document.getElementById("afload3").style.pointerEvents="none";
+        document.getElementById("afload3").style.cursor="default";
+
+        document.getElementById("afload4").style.pointerEvents="none";
+        document.getElementById("afload4").style.cursor="default";
+
+        document.getElementById("afload5").style.pointerEvents="none";
+        document.getElementById("afload5").style.cursor="default";
+        
+
+        
+    }
+</script>
+
+
+<style>
+.container1{
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    box-shadow: 8px 4px 8px 4px;
+}
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: rgb(177, 49, 241);
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+  </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../static/js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="../static/assets/demo/chart-area-demo.js"></script>
+        <script src="../static/assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="../static/assets/demo/datatables-demo.js"></script>
+    </body>
+</html>
