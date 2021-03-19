@@ -9,12 +9,12 @@ Angry, sadness, and joy
 <img src="https://user-images.githubusercontent.com/42066122/111740105-2c100f80-88aa-11eb-936d-2864ba34c3fe.png" class="img-fluid">
 
 # Results
-<img src="https://user-images.githubusercontent.com/42066122/111740299-84471180-88aa-11eb-99a7-4d766967cb3f.png" >
-  
-Fig: Dashboard of System 
-<img src="https://user-images.githubusercontent.com/42066122/111740326-8dd07980-88aa-11eb-809a-d96fde0c43a1.png">
-  
-Fig: Records of all the files/customers 
-<img src="https://user-images.githubusercontent.com/42066122/111740344-9923a500-88aa-11eb-91e8-4302b126ce01.png" >
-Fig: Detailed report of analysis 
+<img src="https://user-images.githubusercontent.com/42066122/111740299-84471180-88aa-11eb-99a7-4d766967cb3f.png" class="img-fluid"><br>
+Fig: Dashboard of System <br>
+<img src="https://user-images.githubusercontent.com/42066122/111740326-8dd07980-88aa-11eb-809a-d96fde0c43a1.png" class="img-fluid"><br>
+Fig: Records of all the files/customers<br>
+<img src="https://user-images.githubusercontent.com/42066122/111740344-9923a500-88aa-11eb-91e8-4302b126ce01.png" class="img-fluid"><br>
+Fig: Detailed report of analysis<br>
+![image](https://user-images.githubusercontent.com/42066122/111740659-22d37280-88ab-11eb-96b9-f0378f6c9de8.png)
+
 
