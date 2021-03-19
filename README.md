@@ -15,6 +15,5 @@ Fig: Dashboard of System <br>
 Fig: Records of all the files/customers<br>
 <img src="https://user-images.githubusercontent.com/42066122/111740344-9923a500-88aa-11eb-91e8-4302b126ce01.png" class="img-fluid"><br>
 Fig: Detailed report of analysis<br>
-![image](https://user-images.githubusercontent.com/42066122/111740659-22d37280-88ab-11eb-96b9-f0378f6c9de8.png)
-
-
+<img src="https://user-images.githubusercontent.com/42066122/111740837-6e861c00-88ab-11eb-8af6-87328041c9ea.png" class="img-fluid"><br>
+Fig: Live video chat analysis with detailed report as above.
